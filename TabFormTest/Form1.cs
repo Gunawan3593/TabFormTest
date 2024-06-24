@@ -7,9 +7,10 @@ namespace TabFormTest
     {
 
         private int form2Index = -1;
+        private int form3Index = -1;
         private Point _imageLocation = new Point(17, 2);
         private Point _imgHitArea = new Point(17, 2);
-        private Image closeR = new Bitmap(1,1);
+        private Image closeR = new Bitmap(1, 1);
 
         public Form1()
         {
@@ -27,12 +28,7 @@ namespace TabFormTest
 
         private void form2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.form2Index > -1)
-            {
-                tabControl1.TabIndex = this.form2Index;
-
-            }
-            else
+            if (this.form2Index == -1)
             {
                 var form2 = new Form2();
                 form2.TopLevel = false;
@@ -42,6 +38,7 @@ namespace TabFormTest
                 form2.Dock = DockStyle.Fill;
                 form2.Show();
             }
+            tabControl1.SelectedIndex = this.form2Index;
         }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -70,14 +67,53 @@ namespace TabFormTest
             r.Offset(_tabWidth, _imgHitArea.Y);
             r.Width = 16;
             r.Height = 16;
-            if(tabControl1.SelectedIndex > -1)
+            if (tabControl1.SelectedIndex > -1)
             {
                 if (r.Contains(p))
                 {
                     TabPage tabP = (TabPage)tc.TabPages[tc.SelectedIndex];
+                    resetIndex(tc.SelectedIndex);
+                    tabReIndex(tc.SelectedIndex);
                     tc.TabPages.Remove(tabP);
-                    this.form2Index = -1;
                 }
+            }
+        }
+
+        private void form2ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.form3Index == -1)
+            {
+                var form3 = new Form3();
+                form3.TopLevel = false;
+                tabControl1.TabPages.Add(form3.Text);
+                this.form3Index = tabControl1.TabCount - 1;
+                tabControl1.TabPages[this.form3Index].Controls.Add(form3);
+                form3.Dock = DockStyle.Fill;
+                form3.Show();
+            }
+            tabControl1.SelectedIndex = this.form3Index;
+        }
+
+        private void resetIndex(int index)
+        {
+            if(this.form2Index == index)
+            {
+                this.form2Index = -1;
+            } else if (this.form3Index == index)
+            {
+                this.form3Index = -1;
+            }
+        }
+
+        private void tabReIndex(int index)
+        {
+            if (this.form2Index > index && this.form2Index > -1)
+            {
+                this.form2Index -= 1;
+            }
+            else if (this.form3Index > index && this.form3Index > -1)
+            {
+                this.form3Index -= 1;
             }
         }
     }

@@ -31,6 +31,7 @@
             tabControl1 = new TabControl();
             menuStrip1 = new MenuStrip();
             form2ToolStripMenuItem = new ToolStripMenuItem();
+            form2ToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { form2ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { form2ToolStripMenuItem, form2ToolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -61,6 +62,13 @@
             form2ToolStripMenuItem.Size = new Size(56, 20);
             form2ToolStripMenuItem.Text = "Form 2";
             form2ToolStripMenuItem.Click += form2ToolStripMenuItem_Click;
+            // 
+            // form2ToolStripMenuItem1
+            // 
+            form2ToolStripMenuItem1.Name = "form2ToolStripMenuItem1";
+            form2ToolStripMenuItem1.Size = new Size(56, 20);
+            form2ToolStripMenuItem1.Text = "Form 3";
+            form2ToolStripMenuItem1.Click += form2ToolStripMenuItem1_Click;
             // 
             // Form1
             // 
@@ -84,5 +92,6 @@
         private TabControl tabControl1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem form2ToolStripMenuItem;
+        private ToolStripMenuItem form2ToolStripMenuItem1;
     }
 }
