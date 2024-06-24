@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabFormTest", "TabFormTest\TabFormTest.csproj", "{C34FF386-6C65-43EE-B43F-54F553805F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C34FF386-6C65-43EE-B43F-54F553805F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34FF386-6C65-43EE-B43F-54F553805F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34FF386-6C65-43EE-B43F-54F553805F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34FF386-6C65-43EE-B43F-54F553805F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FC3EA12-B07E-4C3C-A169-47ABD0DB0E4B}
+	EndGlobalSection
+EndGlobal
