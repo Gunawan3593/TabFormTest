@@ -32,6 +32,7 @@
             menuStrip1 = new MenuStrip();
             form2ToolStripMenuItem = new ToolStripMenuItem();
             form2ToolStripMenuItem1 = new ToolStripMenuItem();
+            form4ToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { form2ToolStripMenuItem, form2ToolStripMenuItem1 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { form2ToolStripMenuItem, form2ToolStripMenuItem1, form4ToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -69,6 +70,13 @@
             form2ToolStripMenuItem1.Size = new Size(56, 20);
             form2ToolStripMenuItem1.Text = "Form 3";
             form2ToolStripMenuItem1.Click += form2ToolStripMenuItem1_Click;
+            // 
+            // form4ToolStripMenuItem
+            // 
+            form4ToolStripMenuItem.Name = "form4ToolStripMenuItem";
+            form4ToolStripMenuItem.Size = new Size(56, 20);
+            form4ToolStripMenuItem.Text = "Form 4";
+            form4ToolStripMenuItem.Click += form4ToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -93,5 +101,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem form2ToolStripMenuItem;
         private ToolStripMenuItem form2ToolStripMenuItem1;
+        private ToolStripMenuItem form4ToolStripMenuItem;
     }
 }

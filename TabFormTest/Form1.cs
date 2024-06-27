@@ -8,6 +8,7 @@ namespace TabFormTest
 
         private int form2Index = -1;
         private int form3Index = -1;
+        private int form4Index = -1;
         private Point _imageLocation = new Point(17, 2);
         private Point _imgHitArea = new Point(17, 2);
         private Image closeR = new Bitmap(1, 1);
@@ -46,10 +47,17 @@ namespace TabFormTest
             Image img = new Bitmap(closeR);
             Rectangle r = e.Bounds;
             r = this.tabControl1.GetTabRect(e.Index);
-            r.Offset(2, 2);
             Brush titleBrush = new SolidBrush(Color.Black);
+            Brush bgBrush = new SolidBrush(this.BackColor);
             Font f = this.Font;
+            if (e.Index == this.tabControl1.SelectedIndex)
+            {
+                bgBrush = new SolidBrush(Color.LightGray);
+                titleBrush = new SolidBrush(Color.Black);
+            }
+            e.Graphics.FillRectangle(bgBrush, r);
             string title = this.tabControl1.TabPages[e.Index].Text;
+            r.Offset(2, 2);
             e.Graphics.DrawString(title, f, titleBrush, new PointF(r.X, r.Y));
             if (tabControl1.SelectedIndex > -1)
             {
@@ -96,12 +104,17 @@ namespace TabFormTest
 
         private void resetIndex(int index)
         {
-            if(this.form2Index == index)
+            if (this.form2Index == index)
             {
                 this.form2Index = -1;
-            } else if (this.form3Index == index)
+            }
+            else if (this.form3Index == index)
             {
                 this.form3Index = -1;
+            }
+            else if (this.form4Index == index)
+            {
+                this.form4Index = -1;
             }
         }
 
@@ -115,6 +128,25 @@ namespace TabFormTest
             {
                 this.form3Index -= 1;
             }
+            else if (this.form4Index > index && this.form4Index > -1)
+            {
+                this.form4Index -= 1;
+            }
+        }
+
+        private void form4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.form4Index == -1)
+            {
+                var form4 = new Form4();
+                form4.TopLevel = false;
+                tabControl1.TabPages.Add(form4.Text);
+                this.form4Index = tabControl1.TabCount - 1;
+                tabControl1.TabPages[this.form4Index].Controls.Add(form4);
+                form4.Dock = DockStyle.Fill;
+                form4.Show();
+            }
+            tabControl1.SelectedIndex = this.form4Index;
         }
     }
 }
